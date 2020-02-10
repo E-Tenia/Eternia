@@ -24,7 +24,10 @@ public class Main extends JavaPlugin {
 		String insultes[] = { 
 				"Espèce de koungouz des montages ! ",
 				"Commence par me parler poliment ",
-				"Espèce de sexe d'oursin c:"
+				"Espèce de sexe d'oursin c:",
+				"Sale Clampin",
+				"Tu crois que c'est du respect ça mon garçon ?",
+				"Va faire des tiktoks"
 				};
 		
 		int max = insultes.length;
@@ -42,7 +45,7 @@ public class Main extends JavaPlugin {
 		} 
 		final Player p = (Player)sender;
 		if (commandLabel.equalsIgnoreCase("insulte")) {
-			if (args.length != 1) {
+			if (args.length != 1 || args.length == 0) {
 				p.sendMessage(ChatColor.RED + "utilisation: /" + commandLabel + " <Pseudo>");
 				return true;
 			} 
@@ -79,7 +82,7 @@ public class Main extends JavaPlugin {
 				((BukkitRunnable)this.cooldownTask.get(p)).runTaskTimer((Plugin)this, 20L, 20L);
 				return true;
 			} 
-		} 
+		}
 		return false;
 	}
 }
