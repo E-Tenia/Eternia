@@ -29,17 +29,17 @@ public class Main extends JavaPlugin {
 				"Espèce de koungouz des montages ! ",
 				"Commence par me parler poliment ",
 				"Espèce de sexe d'oursin c: ",
+				"Sale Clampin",
+				"Va faire des tiktoks",
 				"Est-ce que tu crois que c'est du respect ça mon garçon ? "
 				};
 		
-		int max = insultes.length;
-		int min = 0;
+		int max = insultes.length, min = 0 ;
 		int aleat = min + (int)(Math.random() * ((max - min) + 1));
 		
 		TextComponent reponse = new TextComponent("§a[Répondre]");
 		reponse.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT , new ComponentBuilder ("Répondre à ce boloss").create()));
 		reponse.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/insulte " + p.getName() + ""));
-		
 		
 		target.sendMessage(ChatColor.YELLOW + insultes[aleat] + ChatColor.RED+ "(" + p.getName() + ") ");
 		target.spigot().sendMessage(reponse);
@@ -93,3 +93,31 @@ public class Main extends JavaPlugin {
 		return false;
 	}
 }
+
+//TODO : Gestion de l'exception
+
+/*[16:11:16 ERROR]: null
+org.bukkit.command.CommandException: Unhandled exception executing command 'insulte' in plugin Eternia v1.0
+at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[patched_1.15.2.jar:git-Paper-91]
+at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:159) ~[patched_1.15.2.jar:git-Paper-91]
+at org.bukkit.craftbukkit.v1_15_R1.CraftServer.dispatchCommand(CraftServer.java:742) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.PlayerConnection.handleCommand(PlayerConnection.java:1820) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.PlayerConnection.a(PlayerConnection.java:1628) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.PacketPlayInChat.a(PacketPlayInChat.java:47) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.PacketPlayInChat.a(PacketPlayInChat.java:5) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.PlayerConnectionUtils.lambda$ensureMainThread$0(PlayerConnectionUtils.java:23) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.TickTask.run(SourceFile:18) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.IAsyncTaskHandler.executeTask(IAsyncTaskHandler.java:136) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.IAsyncTaskHandlerReentrant.executeTask(SourceFile:23) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.IAsyncTaskHandler.executeNext(IAsyncTaskHandler.java:109) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.MinecraftServer.ba(MinecraftServer.java:1038) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.MinecraftServer.executeNext(MinecraftServer.java:1031) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.IAsyncTaskHandler.awaitTasks(IAsyncTaskHandler.java:119) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.MinecraftServer.sleepForTick(MinecraftServer.java:1015) ~[patched_1.15.2.jar:git-Paper-91]
+at net.minecraft.server.v1_15_R1.MinecraftServer.run(MinecraftServer.java:938) ~[patched_1.15.2.jar:git-Paper-91]
+at java.lang.Thread.run(Unknown Source) [?:1.8.0_241]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 4
+at fr.ethan.eternia.Main.insulteAleat(Main.java:44) ~[?:?]
+at fr.ethan.eternia.Main.onCommand(Main.java:75) ~[?:?]
+at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[patched_1.15.2.jar:git-Paper-91]
+... 17 more*/
