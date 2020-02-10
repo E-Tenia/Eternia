@@ -1,0 +1,7 @@
+name: Eternia
+main: fr.ethan.eternia.Main
+version: 1.0
+commands:
+  insulte:
+    description: ceci est une de troll
+    permission: insulte.use
