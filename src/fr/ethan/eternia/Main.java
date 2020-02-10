@@ -31,7 +31,9 @@ public class Main extends JavaPlugin {
 				"Espèce de sexe d'oursin c: ",
 				"Sale Clampin",
 				"Va faire des tiktoks",
-				"Est-ce que tu crois que c'est du respect ça mon garçon ? "
+				"Sale Clampin",
+				"Tu crois que c'est du respect ça mon garçon ?",
+				"Va faire des tiktoks"
 				};
 		
 		int max = insultes.length, min = 0 ;
@@ -52,7 +54,7 @@ public class Main extends JavaPlugin {
 		} 
 		final Player p = (Player)sender;
 		if (commandLabel.equalsIgnoreCase("insulte")) {
-			if (args.length != 1) {
+			if (args.length != 1 || args.length == 0) {
 				p.sendMessage(ChatColor.RED + "utilisation: /" + commandLabel + " <Pseudo>");
 				return true;
 			} 
@@ -70,7 +72,7 @@ public class Main extends JavaPlugin {
 				if (this.cooldownTime.containsKey(p)) {
 					p.sendMessage(ChatColor.YELLOW + "Tu dois attendre " + ChatColor.GREEN + this.cooldownTime.get(p) + ChatColor.YELLOW + " secondes avant d'insulter quelqu'un.");
 					return true;
-				} 
+				}
 				p.sendMessage(ChatColor.YELLOW + "Tu as insulté " + ChatColor.GREEN + target.getName());
 				insulteAleat(target,p);
 				
@@ -89,7 +91,7 @@ public class Main extends JavaPlugin {
 				((BukkitRunnable)this.cooldownTask.get(p)).runTaskTimer((Plugin)this, 20L, 20L);
 				return true;
 			} 
-		} 
+		}
 		return false;
 	}
 }
