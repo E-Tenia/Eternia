@@ -33,7 +33,11 @@ public class Main extends JavaPlugin {
 				"Va faire des tiktoks",
 				"Sale Clampin",
 				"Tu crois que c'est du respect ça mon garçon ?",
-				"Va faire des tiktoks"
+				"Va faire des tiktoks",
+				"Espece de raclure de fausse couche",
+				"Ta mère c'est pas ta vraie mère, c'est moi qui l'ai baisé",
+				"Ankulai 2 vash",
+				"Ton père le jardinier"
 				};
 		
 		int max = insultes.length, min = 0 ;
